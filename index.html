@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Протокол Диффи-Хеллмана</title>
+	<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Протокол Диффи-Хеллмана</h1>
+		<div class="cryptor">
+			<div class="keys">
+				<div>
+					<p>Ваш публичный ключ:</p>
+					<input type="text" id="in-pub1" placeholder="">
+				</div>
+				<div>
+					<p>Публичный ключ собеседника:</p>
+					<input type="text" id="in-pub2" placeholder="">
+				</div>
+				<div>
+					<p>Приватный ключ:</p>
+					<input type="text" id="in-priv">
+				</div>
+				<button id="init-keys">Сохранить</button>
+			</div>
+			<div>
+				<div class="partials keys">
+					<div>
+						<p>Ваш частичный ключ:</p>
+						<p id="out-part">-</p>
+					</div>
+					<div>
+						<p>Частичный ключ собеседника:</p>
+						<input type="text" id="in-part">
+					</div>
+				</div>
+				<div class="keys ready-state">
+					<p>Состояние криптора: </p>
+					<p id="ready">Не инициализирован!</p>
+				</div>
+			</div>
+		</div>
+		<div class="translator">
+			<textarea name="input" id="input-cif" placeholder="Исходный текст" disabled></textarea>
+			<button id=revert>O</button>
+			<textarea name="output" id="output-cif" placeholder="Зашифрованный текст" readonly></textarea>
+		</div>
+		<button id="translate">Зашифровать</button>
+	</div>
+	<script src="./DifHel.js"></script>
+	<script src="./main.js"></script>
+</body>
+</html>
