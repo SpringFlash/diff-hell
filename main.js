@@ -57,12 +57,14 @@ function crypt() {
 const statePlace = document.getElementById('ready');
 function updateState() {
   if (cryptor == {}) return;
-  statePlace.style.color = '';
+  
   statePlace.innerHTML = cryptor.state;
-  console.log(cryptor)
   if (cryptor.state === 'Готов!') {
     statePlace.style.color = 'green'
     inp.disabled = false;
+  } else {
+    statePlace.style.color = '';
+    inp.disabled = true;
   };
 }
 
